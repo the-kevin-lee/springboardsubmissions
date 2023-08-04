@@ -15,3 +15,11 @@ describe("Servers test (with setup and tear-down)", function() {
     // teardown logic
   });
 });
+
+describe("tip server functionality", function() {
+  
+  
+
+
+  
+});
