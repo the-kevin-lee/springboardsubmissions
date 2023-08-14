@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Application!</title>
+</head>
+<body>
+    
+<form> 
+    <label for="movieName">Movie Name</label>
+    <input type="text" id="movieName">
+    <br>
+    <br>
+    <label for="rating">Rate It!</label>
+    <input type="text" id="rating">
+    <button class="submit-movie">Submit Movie!</button>
+</form>
+
+
+<ul>
+
+</ul>
+
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<script>
+    $('button.submit-movie').on('click',function(event){
+        event.preventDefault();
+        let movie = $('input#movieName').val();
+        let rating = $('input#rating').val();
+        let movieItem = $(`<li>${movie} - ${rating}</li>`);
+        let removeButton = $('<button class="to-remove">Remove Me!</button>');
+        movieItem.append(removeButton);
+        $('ul').append(movieItem);   
+        
+    })
+
+    $('ul').on('click', 'button.to-remove', function(event) {
+        event.preventDefault();
+        $(this).parent().remove();
+    })
+
+</script>
+</body>
+</html>
