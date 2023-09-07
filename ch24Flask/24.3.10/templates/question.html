@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block maincontent%}
+
+
+<h1>{{thequestion}}</h1>
+
+<form method="post"> <!-- No action attribute set here so that the quest() view function in apps.py will be triggered again and thus checking 
+if the submission was a post, which it will be. In turn, it will append the answer and then redirect the user to the next question.-->
+    {% for choice in thechoices %}
+    <input type="radio" name="answer" value="{{choice}}">
+    {{choice}}
+    <br>
+    {% endfor %}
+    <input type="submit" value="SUBMIT">
+</form>
+
+
+
+
+
+{% endblock %}
