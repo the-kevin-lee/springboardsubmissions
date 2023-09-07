@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+<!-- title and maincontent will go within the body -->
+{% block title %}
+   <h1>{{survey_title}}</h1>
+{% endblock %}
+
+{% block maincontent %}
+   <h3>{{survey_instructions}}</h3>
+   <form action="/initiate-response" method="post">
+      <button>START!</button>
+   </form>
+
+{% endblock %}
