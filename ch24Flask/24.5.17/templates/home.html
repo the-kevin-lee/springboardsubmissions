@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boggle Game</title>
+</head>
+
+<body>
+
+    <h1>Welcome to the Boggle Game!</h1>
+    <div>
+        <table>
+            {% for row in board%}
+            <tr>
+                {% for cell in row %}
+                <td>{{cell}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+
+    <br>
+    <br>
+
+    <form action="/verify-word" method="post" id="guess-form">
+        <label for="guess">Enter Your Word!</label>
+        <br>
+        <input type="text" placeholder="Word" id="guess" name="guess">
+        <button>Submit</button>
+    </form>
+    
+    <br>
+    <br>
+
+    <div id="score-body">
+        <h3>SCORE!</h3>
+        <div id="score-box">
+
+        </div>
+
+    </div>
+
+
+    <!-- JQUERY, AXIOS, JS -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/static/ajax.js"></script>
+
+
+</body>
+
+</html>
