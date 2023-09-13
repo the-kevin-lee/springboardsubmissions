@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    background-color: #ff9a3c;
+}
+
+h1 {
+    color: #ff6f3c;
+    text-align: center;
+    font-family: 'Caprasimo', cursive;
+    font-size: 4rem;
+    margin: 0;
+}
+
+#heading-div {
+    background-image: url(https://tinyurl.com/2p957h4y);
+    background-size: cover;
+    background-position: 0px -200px;
+    background-repeat: no-repeat;
+    height: 500px;
+    max-height: 500px;
+}
+
+#form-div form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+
+
+#form-div button {
+    display: inline-block;
+    margin: 10px;
+}
+
+
+
+    /* BUTTONS! */
+
+    .search-giphy {
+       
+        font-family: Arial, sans-serif !important;
+    }
+
+    .remove-giphy {
+        
+        font-family: Arial, sans-serif !important;
+    }
+
+
+
+    /* GIPHY SECTION */
+
+
+#giphy-div {
+    background-color:  #282C35;
+    color: white;
+    height: 500px;
+}
