@@ -1,0 +1,64 @@
+
+
+body {
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(221, 224, 171, 1) 0%, rgba(177, 222, 188, 1) 38%, rgba(0, 212, 255, 1) 100%);
+  display: flex;
+  align-items: center; /* aligns items vertically */
+  justify-content: center; /* aligns items horizontally */
+  min-height: 100vh; /* ensures the body takes up the full viewport height */
+}
+
+.search-container {
+  position: relative; 
+  text-align: center;
+  z-index: 1; 
+  
+}
+
+.search-container input {
+  border: 7px solid;
+  border-radius: 20px;
+  border-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(221,224,171,1) 0%, rgba(222,222,177,1) 8%, rgba(91,255,0,1) 100%);
+  border-image-slice: 1;
+  background: linear-gradient(90deg, rgba(2, 0, 36, 0.5) 0%, rgba(221, 224, 171, 0.5) 0%, rgba(177, 222, 188, 0.5) 38%, rgba(0, 212, 255, 0.5) 100%);
+  ;
+
+}
+
+
+.search-container input:hover {
+  border: 15px solid;
+  border-radius: 20px;
+  border-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(221,224,171,1) 0%, rgba(222,222,177,1) 8%, rgba(91,255,0,1) 100%);
+  border-image-slice: 1;
+
+}
+
+.suggestions {
+  position: absolute; 
+	width: 100%;
+	top: 100%; 
+	z-index: 0; 
+  background-color: #f8f398;
+}
+
+.suggestions ul {
+  padding: 0;
+  margin: 0;
+}
+
+.choice {
+  background-color: #f8f398;
+  list-style-type: none; /* Removes the bullet points */
+  width: 100%; /* Makes sure it takes up the full width */
+  text-align: center; /* Centers the text */
+  padding: 5px 0; /* Adds some padding top and bottom for better visual */
+}
+
+
+.choice:hover {
+  font-size: larger;
+  cursor: pointer;
+  background-color: #f1b963;
+}
+
