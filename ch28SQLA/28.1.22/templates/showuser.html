@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>User: {{added_user.first_name}}</title>
+</head>
+
+<body>
+
+
+    <img src="{{added_user.image_url}}" alt="User Did Not Upload">
+    <h1>{{added_user.first_name}} {{added_user.last_name}}</h1>
+
+
+    <button><a href="/users/edit/{{added_user.id}}">Edit</a></button>
+    <form action="/users/delete/{{added_user.id}}" method="post">
+        <button type="submit">Delete</button>
+    </form>
+
+</body>
+
+</html>
