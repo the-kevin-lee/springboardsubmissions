@@ -1,0 +1,51 @@
+from datetime import datetime
+from flask_sqlalchemy import SQLAlchemy
+
+# initalize and define database to utilize SQLA
+db = SQLAlchemy()
+
+# connection to main file
+def connect_db(factory):
+    db.factory = factory
+    db.init_app(factory)
+    return db #returns Flask app as an ORM object
+
+
+# Models
+
+class Users(db.Model):
+    """Users"""
+    __tablename__ = "Users"
+
+    def __repr__(self):
+
+        u = self
+        return f"<User id = {u.id} first_name = {u.first_name} last_name = {u.last_name} image_url = {u.image_url}"
+    
+    id = db.Column(db.Integer,primary_key=True,autoincrement=True)
+    first_name = db.Column(db.String(20), nullable=False, default="First Name")
+    last_name = db.Column(db.String(20), nullable=False, default="Last Name")
+    image_url = db.Column(db.String, nullable=False, unique=True)
+
+
+
+class Post(db.Model):
+    """Post"""
+
+    __tablename__ = "Post"
+
+    def __repr__(self):
+        p = self
+        return f"<Post id = {p.id} title = {p.title} content = {p.content} created_at = {p.created_at}"
+
+    id = db.Column(db.Integer,primary_key=True,autoincrement=True)
+    title = db.Column(db.String(20), nullable=False, default="Title")
+    content = db.Column(db.String, nullable=False)
+    created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    user_code = db.Column(db.Integer, db.ForeignKey('Users.id'))
+
+    user = db.relationship('Users', backref='posts') #backref is a SQLA function that allows us to access the user object from the post object
+
+
+
+
