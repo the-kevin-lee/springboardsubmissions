@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Tag</title>
+</head>
+<body>
+    
+<h1>{{added_tag.name}}</h1>
+<ul>
+    {% for post in added_tag.posts %}
+        <li>
+            <a href="{{url_for('show_post', post_id=post.id)}}">{{post.title}}</a>
+        </li>
+    {% endfor %}
+
+    <button><a href="/tags/{{added_tag.id}}/edit">Edit</a></button>
+    <button><a href="/tags/{{added_tag.id}}/delete">Delete</a></button>
+</ul>
+
+</body>
+</html>

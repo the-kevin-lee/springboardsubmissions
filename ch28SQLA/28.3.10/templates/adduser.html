@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Add User</title>
+</head>
+<body>
+    <h1>Create a User</h1>
+    <form action="/users/new" method="post">
+
+
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" name="first_name" maxlength="20">
+        <br>
+        <br>
+        <label for="last_name">Last Name</label>
+        <input type="text" id="last_name" name="last_name" maxlength="20">
+        <br>
+        <br>
+        <label for="image_url">Image</label>
+        <input type="text" id="image_url" name="image_url">
+
+
+        <button id="add-user-button">Add</button>
+
+
+    </form>
+
+
+</body>
+</html>
